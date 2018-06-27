@@ -1,4 +1,24 @@
 #! /bin/sh
+
+echo
+echo
+echo Configurando libreria ZLIB...
+cd zlib
+./configure
+
+echo
+echo
+echo Configurando libreria libevent...
+cd ..
+cd libevent
+./configure --disable-shared --enable-static
+
+
+echo
+echo
+echo Configurando IRCD de IRC-Hispano...
+cd ..
+
 chmod u+x config/install-sh config/configure ircd/crypt/sums ircd/crypt/crypter
 cd config
 if test ! -f config.cache && test -r ../../.config.cache; then
@@ -16,17 +36,3 @@ else if [ "$i" == "-h" ]; then
 fi 
 fi
 done
-
-echo
-echo
-echo Configurando libreria ZLIB...
-cd ..
-cd zlib
-./configure
-
-echo
-echo
-echo Configurando libreria libevent...
-cd ..
-cd libevent
-./configure --disable-shared --enable-static
