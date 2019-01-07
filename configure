@@ -2,20 +2,6 @@
 
 echo
 echo
-echo Configurando libreria ZLIB...
-cd zlib
-./configure
-
-echo
-echo
-echo Configurando libreria libevent...
-cd ..
-cd libevent
-./configure --disable-shared --enable-static
-
-
-echo
-echo
 echo Configurando IRCD de IRC-Hispano...
 cd ..
 
