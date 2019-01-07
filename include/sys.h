@@ -217,38 +217,15 @@ extern int gettimeofday(struct timeval *tv, struct timezone *tz);
  * (C) Copyright 1996 by Carlo Wood. All rights reserved.
  */
 
-/* GNU CC improvements: We can only use this if we have a gcc/g++ compiler */
-#if defined(__GNUC__)
-
-#if (__GNUC__ < 2) || (__GNUC__ == 2 && __GNUC_MINOR__ < 7)
-#define NO_ATTRIBUTE
-#endif
-
-#else /* !__GNUC__ */
-
-/* No attributes if we don't have gcc-2.7 or higher */
-#define NO_ATTRIBUTE
-
-#endif /* !__GNUC__ */
-
 #if defined(__cplusplus)
 #define HANDLER_ARG(x) x
 #define UNUSED(x)
 #else
 #define HANDLER_ARG(x)
-#if defined(NO_ATTRIBUTE)
-#define __attribute__(x)
-#define UNUSED(x) unused_##x
-#else
 #define UNUSED(x) x __attribute__ ((unused))
 #endif
-#endif
 
-#if defined(NO_ATTRIBUTE)
-#define RCSTAG_CC(string) static char unused_rcs_ident[] = string
-#else
 #define RCSTAG_CC(string) static char rcs_ident[] __attribute__ ((unused)) = string
-#endif
 
 #if defined(HAVE_SYS_CDEFS_H)
 #include <sys/cdefs.h>
