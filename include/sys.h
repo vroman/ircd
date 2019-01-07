@@ -215,18 +215,4 @@ extern int gettimeofday(struct timeval *tv, struct timezone *tz);
 
 #define RCSTAG_CC(string) static char rcs_ident[] __attribute__ ((unused)) = string
 
-#if defined(HAVE_SYS_CDEFS_H)
-#include <sys/cdefs.h>
-#else /* !HAVE_SYS_MALLOC_H */
-#undef __BEGIN_DECLS
-#undef __END_DECLS
-#if defined(__cplusplus)
-#define __BEGIN_DECLS   extern "C" {
-#define __END_DECLS     }
-#else
-#define __BEGIN_DECLS
-#define __END_DECLS
-#endif
-#endif /* !HAVE_SYS_CDEFS_H */
-
 #endif /* __sys_include__ */
