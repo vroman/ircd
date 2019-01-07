@@ -1302,7 +1302,7 @@ static char *militime(char *sec, char *usec)
 
   gettimeofday(&tv, NULL);
   if (sec && usec)
-#if defined(__sun__) || defined(__bsdi__) || (__GLIBC__ >= 2) || defined(__NetBSD__)
+#if defined(__sun__) || (__GLIBC__ >= 2) || defined(__NetBSD__)
     sprintf(timebuf, "%ld",
         (tv.tv_sec - atoi(sec)) * 1000 + (tv.tv_usec - atoi(usec)) / 1000);
 #else
@@ -1310,7 +1310,7 @@ static char *militime(char *sec, char *usec)
         (tv.tv_sec - atoi(sec)) * 1000 + (tv.tv_usec - atoi(usec)) / 1000);
 #endif
   else
-#if defined(__sun__) || defined(__bsdi__) || (__GLIBC__ >= 2) || defined(__NetBSD__)
+#if defined(__sun__) || (__GLIBC__ >= 2) || defined(__NetBSD__)
     sprintf(timebuf, "%ld %ld", tv.tv_sec, tv.tv_usec);
 #else
     sprintf_irc(timebuf, "%d %d", tv.tv_sec, tv.tv_usec);

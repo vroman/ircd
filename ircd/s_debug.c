@@ -304,7 +304,7 @@ void send_usage(aClient *cptr, char *nick)
   if (secs == 0)
     secs = 1;
 
-#if defined(__sun__) || defined(__bsdi__) || (__GLIBC__ >= 2) || defined(__NetBSD__)
+#if defined(__sun__) || (__GLIBC__ >= 2) || defined(__NetBSD__)
   sendto_one(cptr, ":%s %d %s :CPU Secs %ld:%ld User %ld:%ld System %ld:%ld",
 #else
   sendto_one(cptr, ":%s %d %s :CPU Secs %ld:%ld User %d:%d System %d:%d",

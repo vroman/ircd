@@ -133,7 +133,7 @@ i*/
 #define register
 
 /* Define FD_SETSIZE to what we want before including sys/types.h on BSD */
-#if  defined(__FreeBSD__) || defined(__NetBSD__) || defined(__bsdi__)
+#if  defined(__FreeBSD__) || defined(__NetBSD__)
 #if ((!defined(USE_POLL)) && (!defined(FD_SETSIZE)))
 #define FD_SETSIZE ((MAXCONNECTIONS)+4)
 #endif
@@ -211,7 +211,7 @@ char *strchr(), *strrchr(), *strtok();
 #if defined(SUNOS4)
 #define LIMIT_FMT "%d"
 #else
-#if (defined(__bsdi__) || defined(__NetBSD__))
+#if defined(__NetBSD__)
 #define LIMIT_FMT "%qd"
 #else
 #define LIMIT_FMT "%ld"
@@ -219,7 +219,7 @@ char *strchr(), *strrchr(), *strtok();
 #endif
 
 /* Different name on NetBSD and FreeBSD --Skip */
-#if defined(__NetBSD__) || defined(__FreeBSD__) || defined(__bsdi__)
+#if defined(__NetBSD__) || defined(__FreeBSD__)
 #define dn_skipname  __dn_skipname
 #endif
 
