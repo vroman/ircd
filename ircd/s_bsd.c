@@ -422,7 +422,7 @@ void init_sys(void)
       close(fd);
     }
 #endif
-#if defined(HPUX) || defined(SOL2) || defined(_SEQUENT_) || \
+#if defined(HPUX) || defined(SOL2) || \
     defined(_POSIX_SOURCE) || defined(SVR4)
     setsid();
 #else
@@ -1104,15 +1104,7 @@ static void set_sock_opts(int fd, aClient *cptr)
   }
 #endif
 #if defined(SO_SNDBUF)
-#if defined(_SEQUENT_)
-/*
- * Seems that Sequent freezes up if the receving buffer is a different size
- * to the sending buffer (maybe a tcp window problem too).
- */
   opt = 8192;
-#else
-  opt = 8192;
-#endif
   if (setsockopt(fd, SOL_SOCKET, SO_SNDBUF, (OPT_TYPE *)&opt, sizeof(opt)) < 0)
   {
 #if defined(DEBUGMODE)

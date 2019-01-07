@@ -18,10 +18,6 @@
  */
 
 #include "sys.h"
-#if defined(_SEQUENT_)
-#include <sys/timers.h>
-#include <stddef.h>
-#endif
 #if HAVE_UNISTD_H
 #include <unistd.h>
 #endif

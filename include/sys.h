@@ -47,11 +47,6 @@
 # define BIT_ZERO_ON_RIGHT
 #endif
 
-#if defined(_SEQUENT_)          /* Dynix 1.4 or 2.0 Generic Define.. */
-#undef BSD
-#define SYSV                    /* Also #define SYSV */
-#endif
-
 #if defined(__hpux)
 #define HPUX
 #endif
