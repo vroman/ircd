@@ -20,8 +20,8 @@
 #if !defined(__sys_include__)
 #define __sys_include__
 
-#include "../config/config.h"
-#include "../config/setup.h"
+/*#include "../config/config.h"*/
+/*#include "../config/setup.h"*/
 
 #if defined(__osf__)
 #define _OSF_SOURCE
@@ -108,7 +108,7 @@
 #error CLIENT_FLOOD needs redefining.
 #endif
 #else
-#error CLIENT_FLOOD undefined
+#error CLIENT_FLOOD 2048
 #endif
 
 #if !defined(CONFIG_SETUGID)
