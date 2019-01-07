@@ -28,9 +28,6 @@
 #if HAVE_FCNTL_H
 #include <fcntl.h>
 #endif
-#if defined(HPUX)
-#include <arpa/inet.h>
-#endif /* HPUX */
 #if defined(R_LINES)
 #include <signal.h>
 #endif

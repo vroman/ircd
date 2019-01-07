@@ -47,10 +47,6 @@
 # define BIT_ZERO_ON_RIGHT
 #endif
 
-#if defined(__hpux)
-#define HPUX
-#endif
-
 #if defined(sgi)
 #define SGI
 #endif

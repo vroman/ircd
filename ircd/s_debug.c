@@ -22,13 +22,6 @@
 #if HAVE_SYS_FILE_H
 #include <sys/file.h>
 #endif
-#if defined(HPUX) && HAVE_FCNTL_H
-#include <fcntl.h>
-#endif
-#if defined(HPUX)
-#include <sys/syscall.h>
-#define getrusage(a,b) syscall(SYS_GETRUSAGE, a, b)
-#endif
 #if HAVE_GETRUSAGE
 #include <sys/resource.h>
 #else
@@ -289,9 +282,6 @@ void send_usage(aClient *cptr, char *nick)
 #define hzz HZ
 #else
   int hzz = 1;
-#if defined(HPUX)
-  hzz = (int)sysconf(_SC_CLK_TCK);
-#endif
 #endif
 #endif
 
@@ -343,9 +333,6 @@ void send_usage(aClient *cptr, char *nick)
   int hzz = 1, ticpermin;
   int umin, smin, usec, ssec;
 
-#if defined(HPUX)
-  hzz = sysconf(_SC_CLK_TCK);
-#endif
   ticpermin = hzz * 60;
 
   umin = tmsbuf.tms_utime / ticpermin;

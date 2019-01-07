@@ -422,7 +422,7 @@ void init_sys(void)
       close(fd);
     }
 #endif
-#if defined(HPUX) || defined(SOL2) || \
+#if defined(SOL2) || \
     defined(_POSIX_SOURCE) || defined(SVR4)
     setsid();
 #else

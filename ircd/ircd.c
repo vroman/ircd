@@ -28,13 +28,7 @@
 #if HAVE_FCNTL_H
 #include <fcntl.h>
 #endif
-#if defined(HPUX)
-#define _KERNEL
-#endif
 #include <sys/resource.h>
-#if defined(HPUX)
-#undef _KERNEL
-#endif
 #if HAVE_UNISTD_H
 #include <unistd.h>
 #endif
