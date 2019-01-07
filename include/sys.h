@@ -29,12 +29,6 @@
 # define BIT_ZERO_ON_RIGHT
 #endif
 
-#if defined(mips)
-#undef SYSV
-#undef BSD
-#define BSD 1                   /* mips only works in bsd43 environment */
-#endif
-
 #if defined(BSD_RELIABLE_SIGNALS)
 #if defined(SYSV_UNRELIABLE_SIGNALS) || defined(POSIX_SIGNALS)
 #error You stuffed up config.h signals #defines use only one.
