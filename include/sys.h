@@ -108,7 +108,7 @@
 #error CLIENT_FLOOD needs redefining.
 #endif
 #else
-#error CLIENT_FLOOD 2048
+#define CLIENT_FLOOD 2048
 #endif
 
 #if !defined(CONFIG_SETUGID)
