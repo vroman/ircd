@@ -27,9 +27,6 @@
 #if HAVE_SYS_IOCTL_H
 #include <sys/ioctl.h>
 #endif
-#if defined(SOL2)
-#include <sys/filio.h>
-#endif
 #include <stdio.h>
 #if defined(HAVE_STROPTS_H)
 #include <stropts.h>
@@ -201,7 +198,7 @@ void report_error(char *text, aClient *cptr)
    * This may only work when SO_DEBUG is enabled but its worth the
    * gamble anyway.
    */
-#if defined(SO_ERROR) && !defined(SOL2)
+#if defined(SO_ERROR)
   if (cptr && !IsMe(cptr) && cptr->fd >= 0)
     if (!getsockopt(cptr->fd, SOL_SOCKET, SO_ERROR, (OPT_TYPE *)&err, &len))
       if (err)
@@ -422,12 +419,7 @@ void init_sys(void)
       close(fd);
     }
 #endif
-#if defined(SOL2) || \
-    defined(_POSIX_SOURCE) || defined(SVR4)
-    setsid();
-#else
     setpgid(0, 0);
-#endif
     close(0);                   /* fd 0 opened by inetd */
     loc_clients[0] = NULL;
   }
@@ -1143,7 +1135,7 @@ int get_sockerr(aClient *cptr)
 {
   int errtmp = errno, err = 0;
   socklen_t len = sizeof(err);
-#if defined(SO_ERROR) && !defined(SOL2)
+#if defined(SO_ERROR)
   if (cptr->fd >= 0)
     if (!getsockopt(cptr->fd, SOL_SOCKET, SO_ERROR, (OPT_TYPE *)&err, &len))
       if (err)

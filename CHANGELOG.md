@@ -9,3 +9,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
  - Removed BSD/OS support
  - Removed DYNIX support
  - Removed HPUX support
+ - Removed SunOS (Solaris) support

@@ -27,20 +27,6 @@
 #define _OSF_SOURCE
 #endif
 
-#if defined(__sun__)
-#if defined(__svr4__)
-#define SOL2
-#else
-#define SUNOS4
-#endif
-#endif
-
-/* Para Solaris 10 de algun nodo */
-#if defined(__sun__)
-#define u_int16_t unsigned short
-#define u_int32_t unsigned int
-#endif
-
 #if WORDS_BIGENDIAN
 # define BIT_ZERO_ON_LEFT
 #else
@@ -202,20 +188,12 @@ char *strchr(), *strrchr(), *strtok();
 # endif
 #endif
 
-#if defined(SOL2)
-#define OPT_TYPE char           /* opt type for get/setsockopt */
-#else
 #define OPT_TYPE void
-#endif
 
-#if defined(SUNOS4)
-#define LIMIT_FMT "%d"
-#else
 #if defined(__NetBSD__)
 #define LIMIT_FMT "%qd"
 #else
 #define LIMIT_FMT "%ld"
-#endif
 #endif
 
 /* Different name on NetBSD and FreeBSD --Skip */
@@ -305,7 +283,7 @@ extern int gettimeofday(struct timeval *tv, struct timezone *tz);
 #define RCSTAG_CC(string) static char rcs_ident[] __attribute__ ((unused)) = string
 #endif
 
-#if defined(HAVE_SYS_CDEFS_H) && !defined(__sun__)
+#if defined(HAVE_SYS_CDEFS_H)
 #include <sys/cdefs.h>
 #else /* !HAVE_SYS_MALLOC_H */
 #undef __BEGIN_DECLS

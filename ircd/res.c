@@ -712,11 +712,7 @@ static int proc_answer(ResRQ *rptr, HEADER * hptr, unsigned char *buf,
   /*
    * Skip past query's
    */
-#if defined(SOL2)               /* brain damaged compiler (Solaris2) it seems */
-  for (; hptr->qdcount > 0; hptr->qdcount--)
-#else
   while (hptr->qdcount-- > 0)
-#endif
   {
     if ((n = dn_skipname(cp, eob)) == -1)
       break;
