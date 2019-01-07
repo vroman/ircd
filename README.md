@@ -1,43 +1,6 @@
-Repositorios del IRCD de IRC-Hispano
-------------------------------------
+This project is a fork of the IRC daemon used by [ChatHispano](https://www.chathispano.com) (formerly IRC-Hispano) IRC network.
 
-El IRCD de IRC-Hispano se puede descargar en los siguientes repositorios de Git:
+I took commit [16da381a](https://gitlab.chathispano.com/servicios/ircd/tree/16da381ab89a8fa4799daabb2260e90270889135) from branch [u2_10_H_10](https://gitlab.chathispano.com/servicios/ircd/tree/u2_10_H_10) as the starting point, discarding the work on the master branch who never went into production and has substantial changes.
 
-- Sourceforge: git://git.code.sf.net/p/irc-hispano/ircd
-- GitHub: https://github.com/IRCHispano/ircd.git
-- GitLab de IRC-Hispano (Privado): http://gitlab.chathispano.com/servicios/ircd.git
+Expect updates to this file about the nature and goals of this fork in the future.
 
-Los desarrollos se hacen contra el Gitlab de IRC-Hispano y seran sincronizados con los
-repositorios publicos para tener la ultima version del IRCD.
-
-
-Este documento enumera las diferentes ramas del repositorio.
-
-
-### RAMA OFICIAL
-
- * IRCD 2.10.H.10 Oficial
-
-   IRCd utilizado en produccion en la red de IRC-Hispano.
-
-   Etiqueta: u2_10_H_10
-
-
-
-
-### RAMA DE DESARROLLO
-
- * IRCD 2.10.H.11
-
-   IRCd de nueva generacion, con todas las ultimas tecnologias vigentes,
-   desarrollo de nuevas caracteristicas y gestion de la base de datos.
-
-   Etiqueta: master
-
-
-
-### Ejemplo
-
-Ejemplo de descarga de la ultima version en produccion del IRCD de IRC-Hispano
-
-`git clone --branch u2_10_H_10 git://git.code.sf.net/p/irc-hispano/ircd irc-hispano-ircd`
