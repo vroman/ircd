@@ -54,18 +54,6 @@
  */
 #define MAXCLIENTS	(MAXCONNECTIONS-24)
 
-#if defined(HAVECURSES)
-#define DOCURSES
-#else
-#undef DOCURSES
-#endif
-
-#if defined(HAVETERMCAP)
-#define DOTERMCAP
-#else
-#undef DOTERMCAP
-#endif
-
 #if defined(CLIENT_FLOOD)
 #if (CLIENT_FLOOD > 8000) || (CLIENT_FLOOD < 512)
 #error CLIENT_FLOOD needs redefining.
