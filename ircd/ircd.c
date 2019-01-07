@@ -624,13 +624,6 @@ int main(int argc, char *argv[])
 #endif
 
 #if !defined(CHROOTDIR) || (defined(IRC_UID) && defined(IRC_GID))
-#if !defined(_AIX)
-  if (euid != uid)
-  {
-    setuid((uid_t) uid);
-    setuid((uid_t) euid);
-  }
-#endif
 
   if ((int)getuid() == 0)
   {

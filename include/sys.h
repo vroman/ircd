@@ -127,7 +127,7 @@ char *strchr(), *strrchr(), *strtok();
 # endif
 #endif
 
-#if defined(_AIX) || (defined(__STRICT_ANSI__) && __GLIBC__ >= 2)
+#if (defined(__STRICT_ANSI__) && __GLIBC__ >= 2)
 #include <sys/select.h>
 #endif
 
@@ -196,7 +196,7 @@ char *strchr(), *strrchr(), *strtok();
 #define MyCoreDump *((int *)NULL)=0
 
 /* This isn't really POSIX :(, but we really need it -- can this be replaced ? */
-#if defined(__STRICT_ANSI__) && !defined(_AIX)
+#if defined(__STRICT_ANSI__)
 extern int gettimeofday(struct timeval *tv, struct timezone *tz);
 #endif
 
