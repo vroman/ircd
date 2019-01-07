@@ -1,0 +1,44 @@
+#define AVBANLEN @ircd_AVBANLEN@
+#define BUFFERPOOL @ircd_BUFFERPOOL@
+#define CONNECTFREQUENCY @ircd_CONNECTFREQUENCY@
+#define CONNECTTIMEOUT @ircd_CONNECTTIMEOUT@
+#define CPATH "@ircd_CPATH@"
+#define DBPATH "@ircd_DBPATH@"
+#define DEFAULTMAXSENDQLENGTH @ircd_DEFAULTMAXSENDQLENGTH@
+#define DOMAINNAME "@ircd_DOMAINNAME@"
+#define DPATH "@ircd_DPATH@"
+#define HANGONGOODLINK @ircd_HANGONGOODLINK@
+#define HANGONRETRYDELAY @ircd_HANGONRETRYDELAY@
+#define KILLCHASETIMELIMIT @ircd_KILLCHASETIMELIMIT@
+#define MAXCHANNELSPERUSER @ircd_MAXCHANNELSPERUSER@
+#define MAXCONNECTIONS @ircd_MAXCONNECTIONS@
+#define MAXIMUM_LINKS @ircd_MAXIMUM_LINKS@
+#define MAXSILELENGTH @ircd_MAXSILELENGTH@
+#define MAXSILES @ircd_MAXSILES@
+#define MAXWATCH @ircd_MAXWATCH@
+#define MPATH "@ircd_MPATH@"
+#define NICKNAMEHISTORYLENGTH @ircd_NICKNAMEHISTORYLENGTH@
+#define PINGFREQUENCY @ircd_PINGFREQUENCY@
+#define PORTNUM @ircd_PORTNUM@
+#define RPATH "@ircd_RPATH@"
+#define SPATH "@ircd_SPATH@"
+
+/* This must be moved into runtime options if needed */
+#define BDD_VIP
+
+/* These are for temporary convenience */
+#define RETSIGTYPE void
+#define TIME_T_FMT "%lu"
+#define STIME_T_FMT "%ld"
+#define SIZE_T_FMT "%lu"
+
+#define HAVE_FCNTL_H 1
+#define HAVE_ERRNO_H 1
+#define HAVE_GETTIMEOFDAY 1
+#define HAVE_INET_NETOF 1
+#define HAVE_STRING_H 1
+#define HAVE_MEMORY_H 1
+#define HAVE_MEMCPY 1
+#define HAVE_MEMMOVE 1
+#define HAVE_SYS_TIME_H 1
+#define HAVE_SYS_MALLOC_H 1
