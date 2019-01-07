@@ -29,10 +29,6 @@
 # define BIT_ZERO_ON_RIGHT
 #endif
 
-#if defined(sgi)
-#define SGI
-#endif
-
 #if defined(mips)
 #undef SYSV
 #undef BSD
