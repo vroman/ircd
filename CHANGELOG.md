@@ -6,7 +6,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Removed
- - Removed BSD/OS support
- - Removed DYNIX support
- - Removed HPUX support
- - Removed SunOS (Solaris) support
+ - Support for the following operating systems has been removed: BSD/OS, DYNIX, HPUX, OSF,
+   SunOS (Solaris)

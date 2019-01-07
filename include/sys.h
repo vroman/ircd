@@ -23,10 +23,6 @@
 /*#include "../config/config.h"*/
 /*#include "../config/setup.h"*/
 
-#if defined(__osf__)
-#define _OSF_SOURCE
-#endif
-
 #if WORDS_BIGENDIAN
 # define BIT_ZERO_ON_LEFT
 #else
@@ -128,13 +124,6 @@ i*/
 #include <stdio.h>
 #include <sys/types.h>
 #include <sys/param.h>
-
-#if defined(__osf__)
-#undef _OSF_SOURCE
-/* Buggy header */
-#include <netdb.h>
-#define _OSF_SOURCE
-#endif
 
 #if HAVE_ERRNO_H
 # include <errno.h>
