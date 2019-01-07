@@ -20,6 +20,7 @@
 #if !defined(__sys_include__)
 #define __sys_include__
 
+#include "config.h"
 /*#include "../config/config.h"*/
 /*#include "../config/setup.h"*/
 
