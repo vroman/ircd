@@ -5,6 +5,7 @@ set (CMAKE_BUILD_TYPE Debug)
 
 IF(CMAKE_BUILD_TYPE MATCHES Debug)
     set (ircd_DEBUGMODE 1)
+    set (ircd_LPATH "/tmp/ircd.log")
 ENDIF()
 
 set (ircd_AVBANLEN 40)
