@@ -1,6 +1,12 @@
 cmake_minimum_required (VERSION 3.12)
 project (ircd)
 
+set (CMAKE_BUILD_TYPE Debug)
+
+IF(CMAKE_BUILD_TYPE MATCHES Debug)
+    set (ircd_DEBUGMODE 1)
+ENDIF()
+
 set (ircd_AVBANLEN 40)
 set (ircd_BUFFERPOOL 27000000)
 set (ircd_CONNECTFREQUENCY 600)
