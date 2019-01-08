@@ -76,8 +76,6 @@
 #include "msg.h"
 #include "random.h"
 
-RCSTAG_CC("$Id$");
-
 extern void init_counters(void);
 
 aClient me;                     /* That's me */

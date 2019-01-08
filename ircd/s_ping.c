@@ -61,8 +61,6 @@
 #include "slab_alloc.h"
 
 
-RCSTAG_CC("$Id$");
-
 #define UPINGBUFSIZE 2000       /* Lot bigger then 1024,
                                    bit smaller then 2048 */
 #define UPINGTIMEOUT 120        /* Timeout waitting for first ping response */

@@ -51,8 +51,6 @@
 #include "msg.h"
 #include "numnicks.h"
 
-RCSTAG_CC("$Id$");
-
 /* *INDENT-OFF* */
 
 /*

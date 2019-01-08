@@ -33,8 +33,6 @@
 #include "msg.h"
 #include "s_debug.h"
 
-RCSTAG_CC("$Id$");
-
 #define MALLOC_HASHTABLE_SIZE 16384
 #define MallocHash(x) \
     ((unsigned int)(((((long int)(x) >> 4) * 0xDEECE66D) >> 16) & (long int)0x3fff))

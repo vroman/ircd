@@ -80,8 +80,6 @@
 #include "m_config.h"
 
 
-RCSTAG_CC("$Id$");
-
 static char buf[BUFSIZE], buf2[BUFSIZE];
 static char *nuevo_nick_aleatorio(aClient *cptr);
 

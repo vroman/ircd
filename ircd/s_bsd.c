@@ -85,8 +85,6 @@
 #include "msg.h"
 #include "slab_alloc.h"
 
-RCSTAG_CC("$Id$");
-
 #define IP_LOOKUP_START ":%s NOTICE IP_LOOKUP :*** Looking up your hostname...\r\n"
 #define IP_LOOKUP_OK ":%s NOTICE IP_LOOKUP :*** Found your hostname.\r\n"
 #define IP_LOOKUP_CACHE ":%s NOTICE IP_LOOKUP :*** Found your hostname (CACHED!).\r\n"

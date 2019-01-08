@@ -27,8 +27,6 @@
 #include "runmalloc.h"
 #include "res.h"
 
-RCSTAG_CC("$Id$");
-
 /*
  * mmatch()
  *

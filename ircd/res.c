@@ -43,8 +43,6 @@ extern int dn_skipname(const unsigned char *, const unsigned char *);
 #include "common.h"
 #include "sprintf_irc.h"
 
-RCSTAG_CC("$Id$");
-
 #define MAXPACKET	1024
 
 #define RES_MAXADDRS	35

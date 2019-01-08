@@ -28,8 +28,6 @@
 #include "ircd.h"
 #include "bsd.h"
 
-RCSTAG_CC("$Id$");
-
 #if defined(DEBUGMODE)
 int writecalls = 0;
 int writeb[10] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };

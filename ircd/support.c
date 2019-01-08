@@ -37,8 +37,6 @@
 #include "s_serv.h"
 #include "res.h"
 
-RCSTAG_CC("$Id$");
-
 #if !defined(HAVE_STRTOKEN)
 /*
  * strtoken.c

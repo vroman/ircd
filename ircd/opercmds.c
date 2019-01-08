@@ -73,8 +73,6 @@ static int modifica_gline(aClient *cptr, aClient *sptr, aGline *agline, int gtyp
 static int ms_gline(aClient *cptr, aClient *sptr, aGline *agline, aGline *a2gline, int parc, char *parv[]);
 static int mo_gline(aClient *cptr, aClient *sptr, aGline *agline, aGline *a2gline, int parc, char *parv[]);
 
-RCSTAG_CC("$Id$");
-
 /*
  *  m_squit
  *

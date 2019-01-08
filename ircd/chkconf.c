@@ -40,8 +40,6 @@
 #include "fileio.h"
 #include "runmalloc.h"
 
-RCSTAG_CC("$Id$");
-
 /*
  * For the connect rule patch..  these really should be in a header,
  * but i see h.h isn't included for some reason..  so they're here.

@@ -214,6 +214,4 @@ extern int gettimeofday(struct timeval *tv, struct timezone *tz);
 #define UNUSED(x) x __attribute__ ((unused))
 #endif
 
-#define RCSTAG_CC(string) static char rcs_ident[] __attribute__ ((unused)) = string
-
 #endif /* __sys_include__ */

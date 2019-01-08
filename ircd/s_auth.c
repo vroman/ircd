@@ -53,8 +53,6 @@
 #include "sprintf_irc.h"
 #include "s_bdd.h"
 
-RCSTAG_CC("$Id$");
-
 #define IDENT_START ":%s NOTICE IDENT_LOOKUP :*** Checking Ident\r\n"
 #define IDENT_OK ":%s NOTICE IDENT_LOOKUP :*** Got ident response\r\n"
 #define IDENT_FAIL ":%s NOTICE IDENT_LOOKUP :*** No ident response, prefixing user with ~\r\n"
