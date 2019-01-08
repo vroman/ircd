@@ -27,7 +27,7 @@ set (ircd_PORTNUM 6667)
 set (ircd_RPATH "remote.motd")
 set (ircd_MAXSILES 15)
 set (ircd_MAXSILELENGTH MAXSILES*AVBANLEN)
-set (ircd_SPATH "")
+set (ircd_SPATH "ircd")
 
 IF(CMAKE_BUILD_TYPE MATCHES Debug)
     set (ircd_DEBUGMODE 1)
