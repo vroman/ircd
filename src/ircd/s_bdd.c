@@ -36,6 +36,7 @@
 #include <sys/mman.h>
 #include <fcntl.h>
 #include <syslog.h>
+#include <unistd.h>
 #include "h.h"
 #include "s_debug.h"
 #include "struct.h"
@@ -1265,7 +1266,7 @@ static void db_die(char *msg, unsigned char que_bdd)
   openlog(myargv[0], LOG_PID | LOG_NDELAY, LOG_DAEMON);
 #endif
 
-  syslog(LOG_ERR, buf);
+  syslog(LOG_ERR, "%s", buf);
 
 #if !defined(USE_SYSLOG)
   closelog();
@@ -1338,7 +1339,7 @@ static int leer_db(struct tabla_en_memoria *mapeo, char *buf)
     *buf = *(mapeo->puntero_r++);
     if (*buf == '\r')
       continue;
-    if ((*buf++ == '\n'))
+    if (*buf++ == '\n')
     {
       *--buf = '\0';
       return cont;
@@ -2919,7 +2920,8 @@ int m_db(aClient *cptr, aClient *sptr, int parc, char *parv[])
  */
 int m_dbq(aClient *cptr, aClient *sptr, int parc, char *parv[])
 {
-  unsigned char tabla, *clave, *servidor;
+  unsigned char tabla;
+  char *clave, *servidor;
   aClient *acptr;
   struct db_reg *reg;
   int nivel_helper = 0;
@@ -3033,7 +3035,7 @@ int m_dbq(aClient *cptr, aClient *sptr, int parc, char *parv[])
     int status = get_status(sptr);
 
     if (status) {
-      if (status & FLAGS_OPER|HMODE_ADMIN|HMODE_CODER)
+      if (status & (FLAGS_OPER|HMODE_ADMIN|HMODE_CODER))
         nivel_helper = 10;
       else if (status & HMODE_HELPOP)
         nivel_helper = 5;
