@@ -3962,12 +3962,6 @@ void make_vhost(aClient *acptr, int mostrar)
     strcpy(ip_virtual_temporal + 13, ".v6");
   }
 
-#if defined(BDD_VIP3)
-  if (MyConnect(acptr))
-  {
-    strcpy(ip_virtual_temporal, PunteroACadena(acptr->user->host));
-  }
-#endif
   SlabStringAllocDup(&(acptr->user->vhost), ip_virtual_temporal, HOSTLEN);
 
   if (mostrar)

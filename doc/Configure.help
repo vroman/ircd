@@ -994,12 +994,6 @@ BDD_VIP
   real de los usuarios con modo +x excepto si quien lo mira es
   un operador con modo +X.
 
-BDD_VIP3
-Ignorar el flag "+x" a menos que el usuario este en la tabla "v" o "w"
-  Si el usuario no aparece en la tabla "v" o "w" (IP Virtual e
-  IP Virtual Personalizado), el que se active el modo "+x" o no
-  se ignora por el servidor.
- 
 Ocultacion de IP de TODOS los usuarios
 BDD_VIP2
   Todos los usuarios tienen su IP protegida, con el flag +x,

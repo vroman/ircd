@@ -217,11 +217,7 @@ char serveropts[] = {
 #else
     '-',
 #endif
-#if defined(BDD_VIP3)
    '+',
-#else
-   '-',
-#endif
 #else
     '-',
 #endif
