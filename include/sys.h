@@ -82,13 +82,6 @@
 
 #define register
 
-/* Define FD_SETSIZE to what we want before including sys/types.h on BSD */
-#if  defined(__FreeBSD__) || defined(__NetBSD__)
-#if ((!defined(USE_POLL)) && (!defined(FD_SETSIZE)))
-#define FD_SETSIZE ((MAXCONNECTIONS)+4)
-#endif
-#endif
-
 #include <stdio.h>
 #include <sys/types.h>
 #include <sys/param.h>
@@ -129,7 +122,7 @@ char *strchr(), *strrchr(), *strtok();
 # endif
 #endif
 
-#if (defined(__STRICT_ANSI__) && __GLIBC__ >= 2)
+#if (defined(__STRICT_ANSI__))
 #include <sys/select.h>
 #endif
 
@@ -147,16 +140,7 @@ char *strchr(), *strrchr(), *strtok();
 
 #define OPT_TYPE void
 
-#if defined(__NetBSD__)
-#define LIMIT_FMT "%qd"
-#else
 #define LIMIT_FMT "%ld"
-#endif
-
-/* Different name on NetBSD and FreeBSD --Skip */
-#if defined(__NetBSD__) || defined(__FreeBSD__)
-#define dn_skipname  __dn_skipname
-#endif
 
 #if defined(DEBUGMODE) && !defined(DEBUGMALLOC)
 #define DEBUGMALLOC

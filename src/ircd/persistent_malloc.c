@@ -588,16 +588,6 @@ extern "C" {
 */
 
 
-#if defined(LACKS_UNISTD_H)
-#if !defined(__FreeBSD__) && !defined(__OpenBSD__) && !defined(__NetBSD__)
-#if __STD_C
-  extern Void_t *sbrk(ptrdiff_t);
-#else
-  extern Void_t *sbrk();
-#endif
-#endif
-#endif
-
 /*
   MORECORE is the name of the routine to call to obtain more memory
   from the system.  See below for general guidance on writing

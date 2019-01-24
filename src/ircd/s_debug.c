@@ -298,11 +298,7 @@ void send_usage(aClient *cptr, char *nick)
   if (secs == 0)
     secs = 1;
 
-#if defined(__sun__) || (__GLIBC__ >= 2) || defined(__NetBSD__)
-  sendto_one(cptr, ":%s %d %s :CPU Secs %ld:%ld User %ld:%ld System %ld:%ld",
-#else
   sendto_one(cptr, ":%s %d %s :CPU Secs %ld:%ld User %d:%d System %d:%d",
-#endif
       me.name, RPL_STATSDEBUG, nick, secs / 60, secs % 60,
       rus.ru_utime.tv_sec / 60, rus.ru_utime.tv_sec % 60,
       rus.ru_stime.tv_sec / 60, rus.ru_stime.tv_sec % 60);
