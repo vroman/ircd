@@ -20,6 +20,7 @@
 #if !defined(__sys_include__)
 #define __sys_include__
 
+#include <signal.h>
 #include "config.h"
 /*#include "../config/config.h"*/
 /*#include "../config/setup.h"*/
@@ -194,7 +195,7 @@ char *strchr(), *strrchr(), *strtok();
 
 #include "runmalloc.h"
 
-#define MyCoreDump *((int *)NULL)=0
+#define MyCoreDump raise(SIGABRT)
 
 /* This isn't really POSIX :(, but we really need it -- can this be replaced ? */
 #if defined(__STRICT_ANSI__)
