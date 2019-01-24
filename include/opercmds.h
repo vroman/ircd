@@ -1,8 +1,8 @@
 #if !defined(OPERCMDS_H)
 #define OPERCMDS_H
 
+#include <pcre.h>
 #include "res.h"
-#include "pcre.h"
 
 /*=============================================================================
  * General defines

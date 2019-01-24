@@ -50,4 +50,4 @@ list(FILTER ircd_sources EXCLUDE REGEX "chkconf.c")
 
 set(EXECUTABLE_OUTPUT_PATH "build")
 add_executable(ircd ${ircd_sources})
-target_link_libraries(ircd event json-c resolv z)
+target_link_libraries(ircd event json-c pcre resolv z)
