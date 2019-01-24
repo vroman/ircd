@@ -1337,7 +1337,7 @@ int find_exception(aClient *cptr)
 
   for (tmp = conf; tmp; tmp = tmp->next)
   {
-    if (!(tmp->status) & CONF_EXCEPTION)
+    if ((!tmp->status) & CONF_EXCEPTION)
       continue;
 
     if ((tmp->host && (match(tmp->host, PunteroACadena(cptr->sockhost)) == 0 ||
