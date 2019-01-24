@@ -96,6 +96,7 @@ char *canal_operadores = NULL;
 char *canal_debug = NULL;
 char *canal_privsdebug = NULL;
 int conversion_utf = 0;
+unsigned char bdd_initialized = 0;
 
 /*
  * Las tablas con los registros, serie, version ...
@@ -2392,6 +2393,9 @@ void initdb(void)
   struct db_reg *reg;
 #endif
 
+  if (bdd_initialized == 0)
+	bdd_init();
+
   memset(tabla_residente_y_len, 0, sizeof(tabla_residente_y_len));
 
 /*
@@ -2477,6 +2481,74 @@ void initdb(void)
 ** Resincronizamos tiempo.
 */
   now = time(NULL);
+}
+
+/**
+ * bdd_init
+ * 
+ * Initializes bdd files if needed
+ */
+
+static void bdd_init()
+{
+  char path[PATH_MAX];
+  char msg[1024];
+
+  struct stat check;
+
+  /* Database directory check */
+  if (stat(DBPATH, &check) == -1) {
+    sprintf(msg, "Database directory '%s' does not exists", DBPATH);
+    syslog(LOG_ERR, "%s", msg);
+    Debug((DEBUG_ERROR, "%s", msg));
+
+    s_die();
+  }
+
+  for (char current = 'a'; current <= 'z'; current++) {
+    sprintf_irc(path, "%s/tabla.%c", DBPATH, current);
+    int stat_status = stat(path, &check);
+
+    /* Lets perform some checks */
+    if (stat_status == -1) {
+      switch (errno) {
+      /* Database file does not exists, lets create it: */
+      	case ENOENT: {
+        	int f = open(path, O_CREAT | O_RDWR, S_IRUSR | S_IWUSR);
+
+	        if (f == -1) {
+          		sprintf(msg, "Error initializing datatabase file %s: %s",
+                		  path, strerror(errno));
+
+          		syslog(LOG_ERR, "%s", msg);
+        	  	Debug((DEBUG_ERROR, "%s", msg));
+
+     	     	s_die();
+        	}
+
+ 	       sprintf(msg, "Initialized database file: %s", path);
+
+ 			syslog(LOG_INFO, "%s", msg);
+        	Debug((DEBUG_INFO, "%s", msg));
+
+        	close(f);
+        	break;
+      }
+
+      	/* Cannot read database file, this ends the ircd execution */
+      	case EACCES: {
+        	sprintf(msg, "Cannot read database file: %s", path);
+
+        	syslog(LOG_ERR, "%s", msg);
+        	Debug((DEBUG_ERROR, "%s", msg));
+
+        	s_die();
+      	}
+      }
+    }
+  }
+
+  bdd_initialized = 1;
 }
 
 /*
