@@ -151,7 +151,7 @@ void send_ping(aClient *cptr)
   remote_addr.sin_family = AF_INET;
 
   gettimeofday(&tv, NULL);
-  sprintf((char *)cptr->confs, " %10u%c%6u", tv.tv_sec, '\0', tv.tv_usec);
+  sprintf((char *)cptr->confs, " %10lu%c%6u", tv.tv_sec, '\0', tv.tv_usec);
 
   Debug((DEBUG_SEND, "send_ping: sending [%s %s] to %s.%d on %d",
       (char *)cptr->confs, (char *)cptr->confs + 12,
