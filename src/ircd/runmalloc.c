@@ -241,7 +241,7 @@ void *RunMalloc(size_t size)
   postfixp(memblkp(ptr), size)->postfix_magicnumber = MAGIC_POSTFIX;
 #endif
 
-  Debug((DEBUG_DEBUG, "RunMalloc(%u) = %p", size, memblkp(ptr)));
+  Debug((DEBUG_DEBUG, "RunMalloc(%lu) = %p", size, memblkp(ptr)));
 
   return memblkp(ptr);
 }
