@@ -41,11 +41,11 @@ configure_file (
 )
 
 # This builds version.c
-execute_process(COMMAND /bin/sh version.c.SH WORKING_DIRECTORY "ircd")
+execute_process(COMMAND /bin/sh version.c.SH WORKING_DIRECTORY "src/ircd")
 
 include_directories("include")
 
-file(GLOB ircd_sources ircd/*)
+file(GLOB ircd_sources src/ircd/*)
 list(FILTER ircd_sources EXCLUDE REGEX "chkconf.c")
 
 set(EXECUTABLE_OUTPUT_PATH "build")
